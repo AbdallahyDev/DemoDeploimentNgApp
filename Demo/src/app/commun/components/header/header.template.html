@@ -1,0 +1,35 @@
+<header class="en-tete">
+
+            <!--Le logo de CIBTP-->
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-5">
+            <a [routerLink]="[getRedirectUrl()]" title="retourner à l'acceuil">
+                <img id="logo-carte-btp" src="src/app/assets/CIP2016_-_COM_-_Logo Web.png" alt="Logo CIBTP" />
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-5" *ngIf="authService.isLoggedIn">
+            <div class="row">
+                <nav class="connexion-menu pull-right">
+                    <div id="bouton-menu" class="menu-nom " (click)="basculerMenu()">
+                        <!--<span data-ng-bind="$ctrl.utilisateur.prenom1">Abda</span>-->
+                        <span>{{authService.user.Nom}}</span>
+                        <span>{{authService.user.Prenom}}</span>
+                        <!--<span data-ng-bind="$ctrl.utilisateur.nom">Bellal</span>-->
+                    </div>
+                    <div id="user-role" style="font-size:smaller" *ngIf="!afficheMenu">
+                        <span>{{authService.user.Profil.Libelle}}</span>
+                        <br />
+                        <span *ngIf="authService.user.Profil.Code!=='ADMINUCF' && authService.user.Profil.Code!=='GESTIONUCF'">{{authService.user.AffectationTerritoriale.CorpsControle.Libelle}}</span>
+                    </div>
+                    <ul class="menu-deroulant" [ngClass]="{'ouvert': afficheMenu}">
+                        <li id="linkMonCompte" class="menu-element">Compte</li>
+                        <li id="linkChangerMotDePasse" class="menu-element">Mot de passe</li>
+                        <li id="linkDeconnexion" class="menu-element" (click)="logOut()">Déconnexion</li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </div> 
+    </div>
+</header>

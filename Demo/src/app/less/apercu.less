@@ -1,0 +1,139 @@
+.carte-apercu {
+	padding: 10px;
+	font-size: .75em;
+	line-height: 1.2;
+	background-image: url('./img/Carte-apercu.png');
+	background-size: 415px auto;
+	height: 262px;
+	background-repeat: no-repeat;
+
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	.gras {
+		font-weight: 600;
+	}
+
+	.identifiant-support {
+		float: left;
+		width: 1%;
+		min-height: 150px;
+		position: relative;
+
+		span {
+			display: inline-block;
+			position: absolute;
+			transform: rotate(-90deg);
+			transform-origin: 0 0;
+			top: 100%;
+			font-size: .8em;
+		}
+	}
+
+	.informations-principales {
+		width: 68%;
+		text-align: right;
+		float: left;
+		height: 242px;
+		position: relative;
+		margin-left: 1%;
+
+		& > div {
+			position: absolute;
+			width: 100%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		.contexte {
+			top: 65px;
+			left: 95px;
+			width: auto;
+			text-transform: uppercase;
+		}
+
+		.type-population {
+			top: 90px;
+		}
+
+		.nom {
+			top: 113px;
+			text-transform: uppercase;
+		}
+
+		.prenoms {
+			top: 130px;
+			text-transform: uppercase;
+		}
+
+		.sexe {
+			top: 147px;
+			font-size: .9em;
+		}
+
+		.raison-sociale {
+			top: 164px;
+			text-transform: uppercase;
+			max-width: 190px;
+			right: 0;
+			font-size: 0.85em;
+			letter-spacing: -1px;
+		}
+
+		.siren {
+			bottom: 30px;
+			font-size: .70em;
+		}
+
+		.logo-entreprise {
+			width: 78px;
+			height: 54px;
+			bottom: 10px;
+			left: 0;
+			text-align: left;
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		.id-date-delivrance {
+			font-size: .75em;
+			bottom: 10px;
+		}
+	}
+
+	.photo-QR {
+		float: left;
+		width: 30%;
+		text-align: center;
+
+		.photo-apercu {
+			width: 100px;
+			height: 130px;
+			margin: 0 auto;
+			margin-top: 13px;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.QR-code {
+			width: 70px;
+			height: 70px;
+			margin: 10px auto 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

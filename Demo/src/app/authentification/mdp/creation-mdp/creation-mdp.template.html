@@ -1,0 +1,70 @@
+﻿<div class="row custom">
+    <section class="panneau-accueil panneau-gauche" *ngIf="tokenIsValid">
+        <!-- Pour accéder au service de création de cartes, veuillez vous identifier -->
+        <h1 class="panneau-titre"> Activation de compte</h1>
+        <div class="panneau-corps">
+            <form name="form" (ngSubmit)="activerCompte()" #f="ngForm" novalidate>
+                <div class="row ligne">
+                    <label id="labelIdentifiant" for="identifiant">Identifiant <span class="requis">*</span>  </label>
+
+                    <input id="identifiant" name="identifiant" type="text" [(ngModel)]="user.Login" #username="ngModel" required
+                           (ngModelOptions)="{ updateOn: 'blur', allowInvalid: true }" />
+                    <span class="aide-conteneur">
+                        <span class="aide"></span>
+                        <span class="aide-cadre">saisissez votre identifiant </span>
+                    </span>
+                </div>
+
+                <div class="row ligne">
+                    <label id="motDePasse"  name="motDePasse" for="motDePasse">Mot de passe <span class="requis">*</span></label>
+                    <input id="password" name="password" type="password" [(ngModel)]="user.mdp" #password="ngModel" required
+                             validateEqual="confirmationPassword" reverse="true" #Courriel="ngModel"
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&<>,;:.#+-\/\\£\{\}\[\]\(\)\''\=\'\x22])[A-Za-z\d$@$!%*?&<>,;:.#+-\/\\£\{\}\[\]\(\)\''\=\'\x22]{8,}"
+                           data-ng-focus="$ctrl.resetErreurServeur()" />
+                    <span class="aide-conteneur">
+                        <span class="aide"></span>
+                        <span class="aide-cadre"> Saisissez votre mot de passe </span>
+                    </span>
+                    <div class="row">
+                        <div [hidden]="!password.hasError('pattern')" class="text-danger">
+                            Le mot de passe est n'est pas valide
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ligne">
+                    <label id="confirmationPassword" name="confirmationPassword" for="confirmationPassword">Confirmation mot de passe <span class="requis">*</span></label>
+                    <input id="confirmationPassword" name="confirmationPassword" type="password" [(ngModel)]="user.mdpConfirmation" #confirmationPassword="ngModel" required
+                                validateEqual="password" reverse="false"
+                           data-ng-focus="$ctrl.resetErreurServeur()" />
+                    <span class="aide-conteneur">
+                        <span class="aide"></span>
+                        <span class="aide-cadre"> Re-saisissez votre mot de passe </span>
+                    </span>
+                    <div class="row">
+                        <small [hidden]="confirmationPassword.valid || (confirmationPassword.pristine && !f.submitted)" class="text-danger">
+                            N'est pas identique avec le mot de passe
+                        </small>
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="false">
+                    <re-captcha site_key="6Leu3zMUAAAAAEDlwZPjy0WWwistk2JjLDGo3ydT"></re-captcha>
+                </div>
+
+                <!--<no-captcha-component data-ng-if="$ctrl.captchaRequis" form="$ctrl.form" data-model="$ctrl.captcha"></no-captcha-component>-->
+                <!--<form-erreurs-component form="$ctrl.form"></form-erreurs-component>-->
+
+
+                <div class="row boutons-bas-de-page centre">
+                    <span class="requis">*</span><span class="champ-obligatoire">Champ obligatoire</span>
+                    <input id="btnAuthentification" class="bouton bouton-bleu" type="submit" [disabled]="!f.valid" title="Valider la création de mon compte" value="Activer mon compte" />
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="row">
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    <div class="conteneur-message" id="lblErreurPasswordLogin" *ngIf="!loading">{{msgErreur}}</div>
+</div>

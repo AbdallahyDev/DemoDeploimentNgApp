@@ -1,0 +1,94 @@
+.accueil-intro {
+    margin: 45px 0;
+    font-size: 1.4em;
+}
+
+.panneau-accueil {
+    /*float: left;*/
+    display: inline-block;
+    width: 45%;
+    border: 1px solid @bleu-gris;
+    margin: 10px 1%;
+
+    &.panneau-gauche {
+        margin-right: 6%;
+    }
+
+    .panneau-titre {
+        color: @white;
+        padding: 10px 15px;
+        background-color: @bleu-gris;
+        margin: 0;
+        font-size: 1.1em;
+        font-weight: 400;
+    }
+
+    .panneau-sous-titre {
+        margin-top: 0;
+        font-weight: 400;
+    }
+
+    .panneau-corps {
+        background-color: @white;
+        padding: 15px 4.5%;
+        min-height: 240px;
+        position: relative;
+
+        .ligne {
+            margin-top: 30px;
+
+            label {
+                display: inline-block;
+                vertical-align: top;
+                width: 18%;
+                text-align: right;
+                margin-right: 35px;
+            }
+
+            input {
+                width: 45%;
+                -webkit-appearance: none;
+            }
+
+            .aide {
+                margin: -15px 7px -6px;
+                vertical-align: 0;
+            }
+        }
+
+        .mdp-oublie {
+            font-size: .7em;
+            margin-left: 18%;
+            width: 45%;
+            display: inline-block;
+            text-align: right;
+
+            a {
+                color: @bleu-principal;
+                text-decoration: none;
+                border-bottom: 1px dotted @bleu-principal;
+            }
+        }
+
+        .custum {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+     
+
+        .requis {
+            color: #e32;
+            content: ' *';
+            display: inline;
+        }
+
+        .champ-obligatoire{
+            /*margin-left:12%;*/
+        }
+    }
+}
+
+#logo-carte-btp {
+    cursor: pointer;
+}

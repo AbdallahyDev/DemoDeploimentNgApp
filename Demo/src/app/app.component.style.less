@@ -1,0 +1,129 @@
+@import "./less/global.less";
+
+:host /deep/ ng2-smart-table tbody > tr > td:first-child {
+    text-align: left;
+    width: 0.1em; // C'est pour que les chackbox prennent une petite taille
+    /*background-color:red;  */
+}
+
+/*Redéfinir le style d'une ligne ou d'une colonne précise, dans ce cas on parle de la première ligne*/
+:host /deep/ ng2-smart-table thead > tr:first-child {
+    text-align: left;
+    background-color: #0064A2;
+    color: white;
+}
+
+/*Redéfinir le style d'une ligne ou d'une colonne précise, dans ce cas on parle de la première ligne + premiere colonne*/
+:host /deep/ ng2-smart-table thead > tr > td:first-child {
+    text-align: left;
+    background-color: red;
+    color: white;
+}
+/*Redéfinir le style d'une ligne ou d'une colonne précise, dans ce cas on parle de la 2éme ligne*/
+:host /deep/ ng2-smart-table thead > tr:nth-child(2) {
+    text-align: left;
+    /*background-color: white; 
+        color: white;*/
+}
+
+/*pour changer les style de titres de la poremière colonne */
+:host /deep/ ng2-smart-table-title > :first-child {
+    text-align: left;
+    color: white;
+}
+
+:host /deep/ ng2-smart-filter > input {
+    font-weight: normal;
+    color: white;
+    background-color: red;
+}
+
+:host {
+    .ng2-smart-filter {
+        /deep/ {
+            input,
+            select {
+                width: 100%;
+                line-height: normal;
+                padding: .375em .75em;
+                font-weight: normal;
+            }
+
+            input[type="search"] {
+                box-sizing: inherit;
+                background-color: red;
+            }
+
+            input[type="checkbox"] {
+                box-sizing: inherit;
+                background-color: red;
+                display: block;
+                color: white;
+            }
+
+            .completer-dropdown-holder {
+                font-weight: normal;
+            }
+
+            a {
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+:host /deep/ ng2-smart-table table {
+    line-height: 2.5em;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+    color: black;
+    font-size: 170%;
+
+    tr {
+        th {
+            font-weight: normal;
+        }
+
+        section {
+            font-size: .75em;
+            font-weight: bold;
+        }
+
+        td,
+        th {
+            /*font-size: .875em;*/
+            font-size: 1.1em !important;
+            margin: 0;
+            padding: 0.5em 1em;
+        }
+    }
+}
+
+
+:host /deep/ ng2-smart-table {
+    th, td {
+        font-size: 1.1em !important;
+        line-height: 35px;
+        vertical-align: middle;
+    }
+
+    table tr td {
+        padding: 0 8px;
+        font-size: 1.1em !important;
+    }
+}
+
+.table tr td {
+    font-size: 1.1em !important;
+}
+
+// appliquer ce style sur toutes les colonnes sauf la premierère
+:host /deep/ ng2-smart-table td:not(:first-child) {
+    font-size: 1.1em !important;
+}

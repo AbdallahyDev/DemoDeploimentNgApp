@@ -1,0 +1,134 @@
+﻿/*¨Pour rendre inclickable les boutons de transfert et partage si aucun élement de la table n'est sélectionné*/
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: lightgray;
+}
+
+a {
+    border-radius: initial;
+}
+
+.search-button {
+    display: inline-block;
+    border: none;
+    top: 5px;
+    background-color: #0064A2;
+    left: 15px;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+    /* style glyph */
+    .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+    }
+
+/* align glyph */
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.custom-left-input {
+    left: 80px;
+}
+
+.custom-left-button {
+    left: 25px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .custom-left-input {
+        left: inherit;
+    }
+
+    .custom-left-button {
+        left: inherit;
+    }
+
+    .search-button {
+        left: inherit;
+        top: 0px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .custom-left-input {
+        left: inherit;
+    }
+
+    .custom-left-button {
+        left: inherit;
+    }
+
+    .search-button {
+        left: inherit;
+        top: 0px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .custom-left-input {
+        left: inherit;
+    }
+
+    .custom-left-button {
+        left: inherit;
+    }
+
+    .search-button {
+        left: inherit;
+        top: 0px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .custom-left-input {
+        left: inherit;
+    }
+
+    .custom-left-button {
+        left: inherit;
+    }
+
+    .search-button {
+        left: inherit;
+        top: 0px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .custom-left-input {
+        left: inherit;
+    }
+
+    .custom-left-button {
+        left: inherit;
+    }
+
+    .search-button {
+        left: 5px;
+    }
+}

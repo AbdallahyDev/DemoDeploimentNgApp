@@ -1,0 +1,17 @@
+/*¨Pour rendre incliquable les boutons de transfert et partage si aucun élement de la table n'est sélectionné*/
+a.disabled {
+    pointer-events: none;
+    cursor: none;
+    background-color: lightgray;
+}
+
+
+a{
+    border-radius:initial;
+}
+
+custom-disabled{  
+    pointer-events: none !important;
+    cursor: none !important;
+    background-color: lightgray !important;
+}

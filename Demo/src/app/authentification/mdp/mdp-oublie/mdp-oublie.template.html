@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <h3>Mot de passe oublié</h3>
+</div>
+<div class="row">
+    <section class="panneau-accueil panneau-gauche">
+        <!-- Pour accéder au service de création de cartes, veuillez vous identifier -->
+        <h1 class="panneau-titre"> Authentification</h1>
+        <div class="panneau-corps">
+            <form name="form" (ngSubmit)="envoyer()" #f="ngForm" novalidate>
+                <div class="row ligne">
+                    <label id="labelIdentifiant" for="identifiant">Identifiant <span class="requis">*</span>  </label>
+
+                    <input id="identifiant" name="identifiant" type="text" [(ngModel)]="user.Login" #username="ngModel" required
+                           (ngModelOptions)="{ updateOn: 'blur', allowInvalid: true }" />
+                    <span class="aide-conteneur">
+                        <span class="aide"></span>
+                        <span class="aide-cadre">saisissez votre identifiant </span>
+                    </span>
+                </div>
+                <div class="row boutons-bas-de-page centre">
+                    <span class="requis">*</span><span class="champ-obligatoire">Champ obligatoire</span>
+                    <input id="btnAuthentification" class="bouton bouton-bleu" type="submit" value="Envoyer" />
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="row">
+    <div class="panneau-corps">
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <div class="conteneur-message" style="margin-left: -5%;" id="lblErreurPasswordLogin" *ngIf="!loading">{{msgErreur}}</div>
+    </div>
+</div>

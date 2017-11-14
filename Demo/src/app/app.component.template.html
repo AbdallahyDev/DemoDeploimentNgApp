@@ -1,0 +1,65 @@
+<!--L'en-tête de l'application-->
+<div class="container-fluid custum-margin">
+    <div class="row">
+        <headers></headers>
+    </div>
+    <!-- Mettre une ligne vide entre le header et le menu principal-->
+    <div class="row top-buffer"></div>
+
+    <!--<div class="row" *ngIf="!isAuthentified">
+        <authentification (onAuthentifier)="authentifier($event)"></authentification>
+    </div>-->
+
+    <div class="row">
+        <div class="delimiteur">
+            <div class="centre">
+                <section class="formulaire" *ngIf="authService.isLoggedIn">
+
+                    <!-- Partie d'insertion du menu principal boutons-tableaudebord boutons-max boutons-quatre clearfix-->
+                    <nav role="navigation">
+                        <!--<div class="boutons-tableaudebord  boutons-quatre clearfix ">-->
+                        <div class="boutons-tableaudebord boutons-max boutons-quatre clearfix ">
+                            <a id="boutonTableauCartes" class="bouton bouton-bleu bouton-icone" routerLink="/sessions" [ngClass]="{'actif': getStatusSessions()}" *ngIf="showSession()" data-translate>
+                                G&Eacute;RER LES SESSIONS DE CONTR&Ocirc;LE
+                            </a>
+
+                            <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu bouton-icone" data-ui-sref="tableaudesutilisateurs" data-translate
+                               routerLink="/habilitations" [ngClass]="{'actif': getStatusHabilitations()}" *ngIf="showHabilitation()">
+                                G&Eacute;RER LES HABILITATIONS
+                            </a>
+
+                            <a id="boutonTableauDemandes" class="bouton bouton-bleu bouton-icone" routerLink="/affectations" [ngClass]="{'actif': getStatusAffectations()}" *ngIf="showAffectation()">
+                                G&Eacute;RER LES AFFECTATIONS TERRITORIALES
+                            </a>
+                        </div>
+                    </nav>
+                    <div class="row">
+                        <div [ngClass]="{'col-md-7 col-lg-8':checkShowListeCCntrl()}">
+                            <!-- Espace pour afficher un message d'information -->
+                            <div id="titleTabeauDeBord" class="titre-formulaire">
+                                <div class="alert alert-info" *ngIf="msgInfo&&msgInfo!==' '&&msgInfo!==''">
+                                    <h4>{{msgInfo}}</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-lg-4" *ngIf="checkShowListeCCntrl()">
+                            <span style="text-align:right;    margin-left: 70%;">
+                                <select (change)="updateHabilitationListe($event.target.value)">
+                                    <option *ngFor="let c of listeCCntrl; let i = index" [selected]="i == 0" [ngValue]="c">{{c.Libelle}}</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+
+                </section>
+                <!--Afficher le template selon la route-->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <footers *ngIf="!authService.isLoggedIn"></footers>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+.assistant {
+	width: 100%;
+	overflow: hidden;
+
+	.element {
+		width: 20%;
+		float: left;
+		background-color: @gris-fond;
+		padding: 10px 3%;
+		text-align: center;
+
+		&.actif {
+			background-color: @bleu-principal;
+			color: @white;
+			font-weight: 600;
+			position: relative;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				border-width: 20px 0 20px 7px;
+				border-style: solid;
+			}
+
+			&::before {
+				left: -7px;
+				border-color: @bleu-principal transparent;
+			}
+
+			&::after {
+				right: -7px;
+				border-color: transparent @bleu-principal;
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.filtres {
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    label {
+        width: 15%;
+        display: inline-block;
+        vertical-align: top;
+        text-align: right;
+    }
+    
+    .select,
+    .input {
+        width: 15%;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 35px;
+        margin-bottom: 15px;
+        
+        select,
+        input[type="text"],
+        input[type="search"] {
+            width: 100%;
+            margin-bottom: 5px;
+
+            &[disabled] {
+                background-color: #CCC;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .plage-date-fin {
+        left: calc(~"60% + 70px");
+        position: relative;
+    }
+    .plage-date-fin-libre {
+        left: calc(~"45% + 70px");
+        position: relative;
+    }
+}

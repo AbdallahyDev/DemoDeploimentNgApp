@@ -1,0 +1,35 @@
+/*Redéfinir le style d'une ligne ou d'une colonne précise, dans ce cas on parle de la première ligne*/
+:host /deep/ ng2-smart-table thead > tr:first-child {
+    text-align: left;
+    background-color: #0064A2;
+    color: white;
+    width : 70% !important;
+}
+
+.table tr th:first-child {
+    width : 70% !important;
+     font-size : 1.1em !important;
+ }
+
+
+/*Redéfinir le style d'une ligne ou d'une colonne précise, dans ce cas on parle de la première ligne + premiere colonne*/
+:host /deep/ ng2-smart-table thead > tr > td:first-child {
+    text-align: left;
+    background-color: red;
+    color: white;
+    width :70%;
+}
+
+/*._nghost-c5   table tr td, [_nghost-c5]     table tr th{
+
+}*/
+
+a{
+    border-radius:initial;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: lightgray;
+}

@@ -1,0 +1,197 @@
+.tableau {
+    width: 100%;
+    border-spacing: 0;
+    table-layout: fixed;
+
+    &.tableau-raye {
+        tbody tr {
+            &:nth-child(2n) {
+                background-color: @bleu-gris-clair;
+            }
+        }
+    }
+
+    &.tableau-surligne {
+        tbody tr:hover {
+            background: @bleu-ciel;
+            cursor: pointer;
+        }
+    }
+
+    caption {
+        font-size: 1.2em;
+        padding: 5px 0;
+        margin-bottom: 15px;
+    }
+
+    tr {
+        th {
+            text-align: left;
+            padding: 3px 20px 3px 5px;
+            background-color: @bleu-principal;
+            color: @white;
+            position: relative;
+
+            &.st-sort-ascent::after,
+            &.st-sort-descent::after {
+                font-family: "fontAwesome";
+                display: inline-block;
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                margin-top: -5px;
+            }
+
+            &.st-sort-ascent::after {
+                content: "\f0d8";
+            }
+
+            &.st-sort-descent::after {
+                content: "\f0d7";
+            }
+        }
+
+        .colonne-boutons {
+            width: 10.5%;
+        }
+
+        td {
+            padding: 4px 7px;
+            word-wrap: break-word;
+
+            &.selectionner {
+                width: 4%;
+                text-align: center;
+                padding: 3px 20px 3px 5px;
+            }
+
+            input[type="search"],
+            select {
+                width: 100%;
+            }
+
+            input[type="search"] {
+                padding-right: 26px;
+            }
+        }
+    }
+
+    #selection-multiple {
+        text-align: center;
+        width: 50px;
+    }
+}
+
+.pagination {
+    border-radius: 4px;
+    display: inline-block;
+    margin: 20px 0;
+    padding-left: 0;
+
+    & > li {
+        display: inline-block;
+
+        & > a, & > span {
+            background-color: @white;
+            border: 1px solid #ddd;
+            color: @bleu-principal;
+            float: left;
+            line-height: 1.42857;
+            margin-left: -1px;
+            padding: 6px 12px;
+            position: relative;
+            text-decoration: none;
+        }
+
+        &:first-child {
+            & > a, & > span {
+                border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+                margin-left: 0;
+            }
+        }
+
+        &:last-child {
+            & > a, & > span {
+                border-bottom-right-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+        }
+
+        &.active {
+            & > a, & > span {
+                background-color: @bleu-principal;
+                border-color: @bleu-principal;
+                color: @white;
+                cursor: default;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+.nombre-par-page a {
+    color: @bleu-principal;
+    text-decoration: none;
+}
+
+#entreprise-sexe,
+#commande-statut,
+#commande-nombre,
+#commande-montant,
+#carte-sexe {
+    width: 7%;
+}
+
+#carte-identifiant,
+#commande-identifiant,
+#commande-date-statut,
+#commande-date-paiement,
+#admin-commande-boutons {
+    width: 9%;
+}
+
+#commande-libelle,
+#commande-siren,
+#demande-type-carte,
+#admin-commande-numero,
+#commande-numero {
+    width: 10%;
+}
+
+#demande-date-creation,
+#commande-date-statut,
+#commande-date-paiement,
+#entreprise-type-compte {
+    width: 11%;
+}
+
+#commande-identification-paiement,
+#admin-commande-identification-paiement,
+#commande-boutons,
+#demande-boutons,
+#tableau-cartes-entreprises #carte-boutons,
+#carte-boutons {
+    width: 14%;
+}
+
+#demande-date-naissance,
+#carte-date-naissance,
+#carte-date-fin-validite {
+    width: 8%;
+}
+
+#commande-nombre-demandes,
+#commande-date-paiement {
+    width: 14%;
+}
+
+#entreprise-siren,
+#commande-identification-paiement,
+#recap-cartes #carte-date-naissance {
+    width: 17%;
+}
+
+#tableau-salaries-sipsi {
+    padding: 15px 0;
+} 

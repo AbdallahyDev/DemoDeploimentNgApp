@@ -1,0 +1,473 @@
+.formulaire {
+  .informations-entreprise,
+  .informations-salarie {
+    margin: 0 auto;
+    border-top: 1px solid @gris-police;
+    margin-top: 20px;
+  }
+
+  .texte-presentatif {
+    font-size: 1.25em;
+  }
+
+  .titre-formulaire {
+    /*margin: 1em 0;*/
+    margin-top:0;
+    margin-bottom:1em;
+    font-size: 2.4em;
+    font-weight: 400;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  .sous-titre-formulaire {
+    font-size: 1.4em;
+    font-weight: 400;
+    display: inline-block;
+    padding: 10px 0 20px;
+    word-break: break-all;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .petit-titre {
+    font-size: 1.2em;
+    font-weight: 400;
+    padding-left: 30px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+
+    legend {
+      width: 100%;
+      position: relative;
+      padding: 0;
+    }
+  }
+
+  .ligne {
+    margin-bottom: 15px;
+    position: relative;
+
+    &.ligne-espacee {
+      margin-bottom: 45px;
+    }
+
+    & > label {
+      width: 25%;
+      display: inline-block;
+      text-align: right;
+      vertical-align: top;
+
+      &.label-fluide {
+        width: auto;
+      }
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      -webkit-appearance: none;
+
+      &[disabled] {
+        border: none;
+        background-color: transparent;
+        color: #000;
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+
+        &::-webkit-input-placeholder {
+          color: transparent;
+        }
+        &:-moz-placeholder {
+          color: transparent;
+        }
+        &::-moz-placeholder {
+          color: transparent;
+        }
+        &:-ms-input-placeholder {
+          color: transparent;
+        }
+      }
+    }
+
+    select {
+      width: 100%;
+    }
+
+    .input,
+    .select {
+      display: inline-block;
+      width: 20%;
+      margin-left: 35px;
+      vertical-align: top;
+
+      & > span {
+        word-break: break-all;
+        max-width: 100%;
+        display: inline-block;
+      }
+
+      &.destinataire {
+        width: calc(~"40% + 35px");
+      }
+
+      .uo-oui {
+        vertical-align: top;
+        margin-right: 25px;
+      }
+
+      .aide-conteneur {
+        word-break: normal;
+      }
+    }
+
+    .identifiant > span {
+      word-break: keep-all;
+      white-space: nowrap;
+    }
+
+    .textarea {
+      display: inline-block;
+      width: calc(~"75% - 35px");
+      margin-left: 35px;
+      vertical-align: top;
+    }
+
+    .date,
+    .nombre {
+      width: 60% !important;
+    }
+
+    .radio {
+      display: inline-block;
+    }
+
+    .groupe-radio {
+      margin-left: 35px;
+    }
+
+    .donnee-statique {
+      margin-left: 35px;
+      max-width: 50%;
+      display: inline-block;
+      word-wrap : break-word;
+    }
+
+    &.petit-label {
+      & > label {
+        width: 20%;
+      }
+
+      .textarea {
+        width: 77.5%;
+      }
+    }
+
+    .input-tel {
+      display: table;
+      width: 100%;
+
+      & > input[type="tel"],
+      & > select {
+        display: table-cell;
+      }
+
+      & > select {
+        width: 70px;
+      }
+
+      & > input[type="tel"] {
+        width: calc(~"100% - 70px");
+      }
+    }
+
+    .aide-conteneur {
+      margin-left: 25px;
+    }
+  }
+
+  .mise-en-ligne {
+    position: relative;
+    width: 150px;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 35px;
+    z-index: 1;
+
+    .champ-mise-en-ligne {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+      opacity: 0;
+      font-size: 5em;
+    }
+
+    .champ-mise-en-ligne[disabled] {
+      cursor: not-allowed;
+    }
+  }
+
+  .mise-en-ligne-nom-fichier {
+    padding-right: 35px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    a {
+      margin-right: 10px;
+    }
+  }
+
+  .requis {
+    display: inline-block;
+    color: @rouge-brique;
+    margin-left: 2px;
+    position: absolute;
+
+    & ~ .mise-en-ligne {
+      margin-left: 37px;
+    }
+  }
+
+  .conteneur-texte,
+  .conteneur-decale {
+    left: 38px;
+    position: relative;
+    margin-left: 25%;
+    margin-bottom: 15px;
+  }
+
+  &.commande {
+    .ligne {
+      & > label {
+        width: 40%;
+      }
+
+      .input,
+      .select {
+        width: 40%;
+      }
+    }
+  }
+}
+
+.boutons-bas-de-page {
+  margin-top: 40px;
+  text-align: right;
+  margin-bottom: 5px;
+
+  &.petit-formulaire {
+    width: 47.5%;
+  }
+
+  &.boutons-siren .bouton {
+    width: 140px;
+  }
+}
+
+.bouton {
+  &.actif {
+    background-color: @bleu-principal-actif;
+  }
+}
+
+.boutons-haut-de-page {
+  margin-bottom: 40px;
+  margin-top: 5px;
+}
+
+.boutons-milieu-de-page {
+  margin: 20px 0;
+}
+
+.boutons-tableaudebord {
+  margin-bottom: 20px;
+
+  &.boutons-max {
+    display: block;
+    //width: 100%;
+    //display: flex;
+
+    .bouton {
+      //width: 33%;
+      text-decoration: none;
+      //float: left;
+      font-size: 1.1em;
+     // display: table-cell/9;
+
+      & + .bouton {
+        margin-left: .5%;
+      }
+
+      &.actif {
+        background-color: @bleu-principal-actif;
+      }
+    }
+  }
+
+  &.boutons-quatre.bouton {
+    width: 24.5%;
+  }
+}
+
+.mission-nom {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.ligne-requis {
+  position: relative;
+  padding-left: 10px;
+
+  .requis {
+    left: 0;
+  }
+}
+
+.radio-delimiteur {
+  font-size: 1.25em;
+  margin: 10px 0 30px;
+
+  span:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  input[type="radio"] {
+    & + label {
+      &::before {
+        top: 2px !important;
+      }
+
+      &::after {
+        top: 6px !important;
+      }
+    }
+
+    &:focus + label {
+      &::before {
+        top: 1px !important;
+      }
+    }
+  }
+}
+
+.groupe-radio {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.valider-cgu {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-top: 0;
+}
+
+input[type="checkbox"] + .case-valider-cgu {
+  display: inline;
+}
+
+.centre {
+  text-align: center;
+}
+
+.matrice {
+  display: inline-block;
+  margin-left: 35px;
+  max-width: ~"calc(75% - 35px)";
+
+  .ligne-matrice {
+    margin-bottom: 10px;
+
+    label {
+      margin-top: 0;
+    }
+  }
+}
+
+.fichier {
+  position: relative;
+  font-size: 1.2em;
+  margin-left: 25%;
+  margin-bottom: 10px;
+  left: 35px;
+
+  &.statique {
+    padding-right: 35px;
+    margin-left: 40%;
+    font-size: 1em;
+  }
+
+  .fichier-nom {
+    margin: 0 15px;
+  }
+
+  .fa-trash {
+    cursor: pointer;
+  }
+
+  .visualisation {
+    cursor: pointer;
+    color: @bleu-principal;
+  }
+}
+
+gestion-fichier-component .aide {
+  margin: 0 10px 5px;
+}
+
+#entrepriseCodeApe + .dropdown-menu {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  border-width: 0 1px 1px;
+  border-style: solid;
+  border-color: @fermeture-popin;
+  position: absolute;
+  max-height: 200px;
+  z-index: 10;
+  background-color: @white;
+  overflow: auto;
+
+  li {
+    padding: 3px 5px;
+    font-size: .8em;
+    color: @gris-police;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &.active {
+      background-color: @bleu-principal;
+      color: @white;
+    }
+  }
+}
+
+.intl-tel-input {
+  width: 100%;
+
+  .selected-dial-code {
+    font-size: 13px;
+  }
+}
+
+#titre-importer-sipsi {
+  margin-bottom: 0;
+}
+#sous-titre-importer-sipsi {
+  margin-top: 0;
+}

@@ -1,0 +1,57 @@
+﻿<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="row custom">
+    <section class="panneau-accueil panneau-gauche">
+        <!-- Pour accéder au service de création de cartes, veuillez vous identifier -->
+        <h1 class="panneau-titre"> Authentification</h1>
+        <div class="panneau-corps">
+            <form name="form" (ngSubmit)="login()" #f="ngForm" novalidate>
+                <div class="row ligne">
+                    <label id="labelIdentifiant" for="identifiant">Identifiant <span class="requis">*</span>  </label>
+
+                    <input id="identifiant" name="identifiant" type="text" [(ngModel)]="user.username" #username="ngModel" required
+                           (ngModelOptions)="{ updateOn: 'blur', allowInvalid: true }" />
+                    <span class="aide-conteneur">
+                        <span class="aide"></span>
+                        <span class="aide-cadre">saisissez votre identifiant </span>
+                    </span>
+                    <div class="mdp-oublie">
+                        <a data-ui-sref="oubli"  routerLink="/identifiant-oublie" routerLinkActive="actif">Identifiant oublié ?</a>
+                    </div>
+                </div>
+              
+                <div class="row ligne">
+                    <label id="labelMotDepasse" for="motDePasse">Mot de passe <span class="requis">*</span></label>
+                    <input id="motDePasse" name="motDePasse" type="password" [(ngModel)]="user.password" #password="ngModel" required
+                           data-ng-focus="$ctrl.resetErreurServeur()" />
+                    <span class="aide-conteneur">
+                        <span class="aide"></span>
+                        <span class="aide-cadre"> Saisissez votre mot de passe </span>
+                    </span>
+                    <div class="mdp-oublie">
+                        <a data-ui-sref="oubli"  routerLink="/mot-de-passe-oublie" routerLinkActive="actif">Mot de passe oublié ?</a>
+                    </div>
+                </div>
+
+               
+
+                <!--<no-captcha-component data-ng-if="$ctrl.captchaRequis" form="$ctrl.form" data-model="$ctrl.captcha"></no-captcha-component>-->
+                <!--<form-erreurs-component form="$ctrl.form"></form-erreurs-component>-->
+               
+
+                <div class="row boutons-bas-de-page centre">
+                    <span class="requis">*</span><span class="champ-obligatoire">Champ obligatoire</span>
+                    <input id="btnAuthentification" class="bouton bouton-bleu" type="submit" value="Me connecter" />
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="row">
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    <div class="conteneur-message" id="lblErreurPasswordLogin" *ngIf="!loading">{{msgErreur}}</div>
+</div>
+
+
+    <!--div class="row">
+        <footers *ngIf="!authService.isLoggedIn"></footers>
+    </div>-->

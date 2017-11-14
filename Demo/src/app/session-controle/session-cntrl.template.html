@@ -1,0 +1,34 @@
+<!--Composant gérant l'affichage de tableau de carte d'une session de contrôle -->
+
+<div style="text-align:left;">
+    <!--(userRowSelect)="onChkSelectionClick($event)"-->
+    <ng2-smart-table [settings]="settings" [source]="source" class="table table-striped" (rowSelect)="onChkSelectionClick($event)" (userRowSelect)="onRowClick($event)"></ng2-smart-table>
+</div>
+<div class="row">
+    <div class="div-bouton-sessions-cntrl">
+        <a id="boutonTableauUtilisateurs" [ngClass]="{'bouton bouton-bleu custom-bouton-session-cntrl':true, 'custom-disabled':checkDisabled()}" data-ui-sref="tableaudesutilisateurs" data-translate
+           routerLink="/partage-sessions">
+            Partager la sélection
+        </a>
+        <a id="boutonTableauUtilisateurs" [ngClass]="{'bouton bouton-bleu custom-bouton-session-cntrl':true, 'custom-disabled':checkDisabled()}" data-ui-sref="tableaudesutilisateurs" data-translate
+           routerLink="/transfert-sessions">
+            Transférer la sélection
+        </a>
+
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           routerLink="/creation-sessions" routerLinkActive="actif">
+            Créer une nouvelle session
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="nombre-par-page" *ngIf="true">
+        <span>	&Eacute;l&eacute;ments par page</span>
+        <span>
+            <a href="javascript:;" (click)="updateItemsNbrPerPage(20)">20</a>
+            <span>,&nbsp; </span>
+            <a href="javascript:;" (click)="updateItemsNbrPerPage(sessionCntrlList.Length)">tout</a>
+        </span>
+    </div>
+</div>

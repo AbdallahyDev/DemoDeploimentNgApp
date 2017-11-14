@@ -1,0 +1,22 @@
+<div style="text-align:left;">
+    <ng2-smart-table [settings]="settings" [source]="source" class="table table-striped" (rowSelect)="onChkSelectionClick($event)"></ng2-smart-table>
+</div>
+<div class="row" *ngIf="showCreateButton()">
+    <div class="div-bouton-sessions-cntrl">
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           routerLink="/creation-habilitation" routerLinkActive="actif">
+            Cr&#233;er une nouvelle habilitation
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="nombre-par-page" *ngIf="true">
+        <span>&Eacute;l&eacute;ments par page</span>
+        <span>
+            <a href="javascript:;" (click)="updateItemsNbrPerPage(20)">20</a>
+            <span>,&nbsp; </span>
+            <a href="javascript:;" (click)="updateItemsNbrPerPage(listeUtilisateurs.Length)">tout</a>
+        </span>
+    </div>
+</div>

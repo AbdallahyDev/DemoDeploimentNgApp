@@ -1,0 +1,79 @@
+﻿<div class="row">
+    <div class="col-md-7 col-lg-8">
+        <h3 class="text-left" style="margin-top: 3px;"><strong>Liste des cartes de la session {{sessionCntrl.Reference}} créée le {{sessionCntrl.DteCreation | date:'dd/MM/y'}}</strong> </h3>
+    </div>
+    <div class="col-md-3 col-md-offset-1  col-lg-2 col-lg-offset-1">
+        <div class="inner-addon right-addon custom-left-input">
+            <i class="glyphicon glyphicon-search"></i>
+            <input type="text" class="form-control"  [maxLength]="13" placeholder="Saisissez un numéro de carte" #numCarte />
+        </div>
+    </div>
+    <div class="col-md-1 col-lg-1 custum-left-button">
+        <a class="bouton bouton-rouge petit search-button" href="javascript:;" (click)="searchCardByNum(numCarte.value)" title="Ajouter à la session" *ngIf="!loading&&!showAddedIcon">
+            <i class="fa fa-plus" style="font-size:9px;color:white" aria-hidden="true"></i>
+        </a>
+        <img *ngIf="loading" style="left:5px;" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+        <a class="bouton bouton-rouge petit search-button" href="javascript:;" *ngIf="showAddedIcon">
+            <i class="fa fa-check" style="font-size:9px;color:white;background-color:green;background:green;" aria-hidden="true"></i>
+        </a>
+    </div> 
+</div>
+<div style="text-align:left;">
+    <!--(userRowSelect)="onChkSelectionClick($event)"-->
+    <ng2-smart-table [settings]="settings" [source]="source" class="table table-striped" (rowSelect)="onChkSelectionClick($event)" (userRowSelect)="onRowClick($event)"></ng2-smart-table>
+</div>
+
+<div class="row">
+    <div class="div-bouton-sessions-cntrl">
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           routerLink="/recherche-cartes" routerLinkActive="actif">
+            Rechercher des cartes
+        </a>
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           href="javascript:;" (click)="confirmerSuppressionCartes()" [class.disabled]="checkDisabled()">
+            Supprimer la sélection
+        </a>
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           routerLink="/detail-cartes" [class.disabled]="checkDisabled()">
+            Voir détail des cartes sélectionnées
+        </a>
+
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           [class.disabled]="checkDisabled()" href="javascript:;" (click)="exporterCartes()">
+            Exporter détail des cartes sélectionnées
+        </a>
+
+        <a id="boutonTableauUtilisateurs" class="bouton bouton-bleu custom-bouton-session-cntrl" data-ui-sref="tableaudesutilisateurs" data-translate
+           [class.disabled]="checkDisabled()" href="javascript:;" (click)="imprimerCartes()">
+            Imprimer détail des cartes sélectionnées
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="nombre-par-page" *ngIf="true">
+        <span>Elements par page</span>
+        <span>
+            <a href="javascript:;" (click)="updateItemsNbrPerPage(20)">20</a>
+            <span>,&nbsp; </span>
+            <a href="javascript:;" (click)="updateItemsNbrPerPage(listCartes.Length)">tout</a>
+        </span>
+    </div>
+</div>
+
+
+<modal #modalConfirmationSuppression>
+    <modal-header>
+        <h4 class="modal-title">Confirmation</h4>
+    </modal-header>
+    <modal-body>
+        <div class="form-group">
+            {{msgConfirmation}}
+        </div>
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.close()">Annuler</button>
+        <button type="button" class="btn btn-primary" (click)="supprimerCartes()">Continuer</button>
+    </modal-footer>
+</modal>

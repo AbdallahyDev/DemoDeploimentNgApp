@@ -1,0 +1,166 @@
+﻿<div class="row">
+    <div class="col-sm-6 col-sm-push-2" style="margin-left: 3%;">
+        <!--<h1 style="margin-left:10%"><Création d'une nouvelle habilitation-></h1>-->
+        <h3 class="text-left"><strong>Création d'une nouvelle habilitation</strong> </h3>
+
+    </div>
+    <!--<div class="col-sm-9 col-sm-pull-10"></div>-->
+
+</div>
+<div class="row">
+    <div class="col-sm-2 col-sm-push-2 custom-champs-obligatoire" >
+        <span class="champs-requis">*</span><span class="champ-obligatoire">Champ obligatoire</span>
+    </div>
+</div>
+<div class="ligne">
+    <form name="form" (ngSubmit)="creerNewHabilitation()" #f="ngForm" class="form-horizontal" novalidate>
+        <div class="form-group">
+
+            <label id="CorpsCntrl" class="col-lg-3 col-lg-push-1 control-label" for="CorpsCntrl">Corps de contrôle </label>
+            <div [ngClass]="getClass()" >
+                <select (change)="updateATListe($event.target.value)" [disabled]="listecorpscontrlIsDisabled" [ngClass]="{'disabledClass':listecorpscontrlIsDisabled}">
+                    <option value="" *ngIf="authService.user.Profil.Code==='ADMINUCF'"> </option>
+                    <option *ngFor="let c of listeCorpsControle; let i = index" [ngValue]="c">{{c.Libelle}}</option>
+                </select>
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Corps du contrôle de l'habilitation</span>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label id="AT" for="AT" class="col-lg-2 col-lg-push-2 control-label">Affectation territoriale<span class="champs-requis">*</span></label>
+            <div class="col-lg-4 col-lg-push-2 custom-class-aff-terri-input-creation">
+                <select (change)="OnAffTerrChange($event.target.value)">
+                    <option value="" *ngIf="authService.user.Profil.Code==='ADMINUCF'">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </option>
+                    <option *ngFor="let c of listeAT; let i = index" [ngValue]="c">{{c.Libelle}}</option>
+                </select>
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre"> Affectation territoriale de l'habilitation </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label id="Profil" for="Profil" class="col-lg-2 col-lg-push-2 control-label">Profil<span class="champs-requis">*</span></label>
+            <div class="col-lg-2 col-lg-push-2 ">
+                <select (change)="OnProfilChange($event.target.value)">
+                    <option value="null"> </option>
+                    <option *ngFor="let c of listeProfil; let i = index" [ngValue]="c">{{c.Libelle}}</option>
+                </select>
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Profil de l'habilitation</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="Nom" for="Nom" class="col-lg-2 col-lg-push-2 control-label">Nom<span class="champs-requis">*</span></label>
+            <div class="col-lg-2 col-lg-push-2">
+                <input id="Nom" name="Nom" type="text" [(ngModel)]="newHabilitation.Nom" #Nom="ngModel" required
+                       data-ng-focus="$ctrl.resetErreurServeur()" (ngModelChange)="dataHasChanged = true" />
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Nom de l'habilitation </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="Prenom" for="Prenom" class="col-lg-2 col-lg-push-2 control-label">Prénom(s)<span class="champs-requis">*</span></label>
+            <div class="col-lg-2 col-lg-push-2">
+                <input id="Prenom" name="Prenom" type="text" [(ngModel)]="newHabilitation.Prenom" #Prenom="ngModel" required
+                       data-ng-focus="$ctrl.resetErreurServeur()" (ngModelChange)="dataHasChanged = true" />
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Prénom de l'habilitation </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label id="Courriel" for="Courriel" class="col-lg-2 col-lg-push-2 control-label">Courriel<span class="champs-requis">*</span></label>
+            <div class="col-lg-2 col-lg-push-2">
+                <input id="Courriel" name="Courriel" type="text" [(ngModel)]="newHabilitation.Courriel"
+                       required validateEqual="courrielConfirmation" reverse="true" #Courriel="ngModel"
+                       pattern="^[a-zA-Z0-9]+([\.\-\_]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+([\.\-\_]?[a-zA-Z0-9]+)*([\.][a-zA-Z0-9]{1,3})+$"
+                       data-ng-focus="$ctrl.resetErreurServeur()" (ngModelChange)="dataHasChanged = true" />
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Courriel de l'habilitation </span>
+                </span>
+                <div class="row">
+                    <div [hidden]="!Courriel.hasError('pattern')" class="text-danger">
+                        Le format du courriel n'est pas valide
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <label id="courrielConfirmation" for="courrielConfirmation" class="col-lg-2 col-lg-push-2 control-label">Courriel <small>confirmation</small><span class="champs-requis">*</span></label>
+            <div class="col-lg-2 col-lg-push-2">
+                <input id="courrielConfirmation" name="courrielConfirmation" type="text" [(ngModel)]="newHabilitation.courrielConfirmation"
+                       required validateEqual="Courriel" reverse="false" #courrielConfirmation="ngModel"
+                       data-ng-focus="$ctrl.resetErreurServeur()" (ngModelChange)="dataHasChanged = true"  />
+
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Confirmation du courriel de l'habilitation </span>
+                </span>
+                <div class="row">
+                    <small [hidden]="courrielConfirmation.valid || (courrielConfirmation.pristine && !f.submitted)" class="text-danger">
+                        N'est pas identique avec le courriel
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label id="Telephone" for="Telephone" class="col-lg-2 col-lg-push-2 control-label">Téléphone</label>
+            <div class="col-lg-2 col-lg-push-2">
+                <input id="Telephone" name="Telephone" type="text" [(ngModel)]="newHabilitation.Telephone" #Telephone="ngModel"
+                       data-ng-focus="$ctrl.resetErreurServeur()" (ngModelChange)="dataHasChanged = true" />
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Téléphone de l'habilitation </span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label id="Commentaire" for="Commentaire" class="col-lg-2 col-lg-push-2 control-label">Commentaires</label>
+            <div class="col-lg-2 col-lg-push-2">
+                <input id="Commentaire" name="Commentaire" type="text" [(ngModel)]="newHabilitation.Commentaire" #Commentaire="ngModel"
+                       data-ng-focus="$ctrl.resetErreurServeur()" (ngModelChange)="dataHasChanged = true" style="height:50px;" />
+                <span class="aide-conteneur">
+                    <span class="aide"></span>
+                    <span class="aide-cadre">Commentaires sur cette habilitation</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row  boutons-bas-de-page centre">
+            <div class="col-lg-4 col-lg-push-4">
+                <input id="btnAuthentification" class="bouton bouton-bleu" type="button" (click)="annuler()" title="Annuler la création" value="Annuler" />
+                <input id="btnAuthentification" class="bouton bouton-bleu" style="margin-left:0%" type="submit" [disabled]="!f.valid" title="Valider la création" value="Continuer" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 col-lg-push-5 col-md-3">
+        <div class="alert alert-danger" id="lblErreurPasswordLogin" *ngIf="showMsg">{{msgErreur}}</div>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+    </div>
+</div>

@@ -1,0 +1,191 @@
+@media screen and (max-width: 1500px) {
+    .formulaire .ligne .input,
+    .formulaire .ligne .select,
+    .formulaire .ligne .donnee-statique,
+    .formulaire .ligne .groupe-radio,
+    .formulaire .ligne .mise-en-ligne,
+    .formulaire .ligne .textarea,
+    .encadre-captcha,
+    .matrice,
+    .filtres .input,
+    .filtres .select {
+        margin-left: 15px;
+    }
+
+    .formulaire .ligne .input.destinataire {
+        width: calc(~"40% + 15px");
+    }
+
+    .matrice {
+        max-width: calc(~"75% - 15px");
+    }
+
+    .textarea {
+        width: calc(~"75% - 15px");
+    }
+
+    .filtres .plage-date-fin {
+        left: calc(~"60% + 30px");
+    }
+
+    no-captcha-component {
+        margin-left: calc(~"25% + 15px");
+    }
+
+    .formulaire .conteneur-texte,
+    .formulaire .conteneur-decale,
+    .mise-en-ligne-infos,
+    .erreur-simple,
+    .erreurs-multiples,
+    .fichier {
+        left: 15px;
+    }
+
+    .panneau-accueil .panneau-corps .ligne label,
+    .erreurs-multiples > * {
+        margin-right: 15px;
+    }
+
+    .conteneur-principal {
+        min-height: calc(~"100vh - 246px");
+    }
+}
+/*Pour adapter le style de boutons et le paragr^phe 'element par page' dans l'ecran de la liste de sessions de controle */
+@media screen and (max-width: 600px) {
+    .div-bouton-sessions-cntrl {
+        bottom: 45px;
+        display: table-row-group;
+    }
+    .nombre-par-page{
+         margin-left:4%;
+    }
+}
+
+@media screen and (max-width: 1355px) {
+    .panneau-accueil:not(.panneau-gauche) .panneau-corps {
+        padding: 15px 2%;
+    }
+
+    .bouton.bouton-carre {
+        margin: 5px 3%;
+    }
+
+    .paiement-action {
+        width: 60%;
+
+        .ligne .input {
+            width: calc(~"70% - 15px");
+        }
+    }
+
+    .paiement-texte {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .panneau-accueil {
+        width: 46%;
+
+        &.panneau-gauche {
+            margin-right: 5%;
+        }
+
+        &:not(.panneau-gauche) .panneau-corps {
+            padding: 15px 1.5%;
+        }
+    }
+
+    .bouton.bouton-carre {
+        margin: 5px 1%;
+    }
+
+    .conteneur-principal {
+        min-height: calc(~"100vh - 263px");
+    }
+
+    .gestion-photos controle-photo-override-admin-component,
+    .gestion-photos controle-photo-override-component {
+        width: 31%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .conteneur-principal {
+        min-height: calc(~"100vh - 297px");
+    }
+
+    .pied-de-page {
+        position: relative;
+    }
+
+    .panneau-accueil {
+        width: auto;
+        float: none;
+        margin-bottom: 10px;
+
+        &.panneau-gauche {
+            /*margin-right: 1%;*/
+            margin-left: 5%;
+        }
+
+        .panneau-corps .boutons-bas-de-page .bouton {
+            display: inline-block;
+        }
+    }
+
+    .formulaire .ligne {
+        width: 90%;
+        margin: 0 auto 7px;
+
+        .input,
+        .select {
+            width: 100%;
+            margin-bottom: 7px;
+            margin-left: 0;
+
+            span:empty {
+                display: none;
+            }
+        }
+
+        & > label {
+            width: auto;
+            text-align: left;
+            margin-bottom: 7px;
+        }
+
+        .ligne {
+            width: 100%;
+        }
+    }
+
+    .delimiteur {
+        /*margin-bottom: 0;*/
+        margin-left: 1%;
+    }
+
+    .filtres {
+        width: 90%;
+        margin: 0 auto 10px;
+
+        label {
+            width: auto;
+            display: block;
+            text-align: left;
+            margin-bottom: 7px;
+        }
+
+        .select,
+        .input {
+            width: 100%;
+            display: block;
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    .filtres .plage-date-fin {
+        left: 0;
+    }
+}

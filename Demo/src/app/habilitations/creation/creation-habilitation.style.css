@@ -1,0 +1,100 @@
+﻿
+.disabledClass{
+     background: #dddddd;
+}
+
+.custom-champs-obligatoire{
+    left: 257px;
+}
+
+.custom-class-corps-contre-input-creation{
+    left:7%;
+}
+
+
+.custom-class-corps-contre-input-creation-ucf{
+    left:3%;
+}
+
+
+.custom-class-aff-terri-input-creation{
+    left : 13.5%
+}
+
+
+@media screen and (max-width: 600px) {
+      .custom-champs-obligatoire {
+       left:inherit;
+    }
+    .custom-class-aff-terri-input-creation {
+       left:inherit;
+    }
+
+     .custom-class-aff-terri-input-creation-ucf {
+       left:inherit;
+    }
+
+    .custom-class-corps-contre-input-creation {
+       left:inherit;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+     .custom-champs-obligatoire {
+       left:inherit;
+    }
+
+      .custom-class-aff-terri-input-creation {
+       left:inherit;
+    }
+    .custom-class-corps-contre-input-creation {
+       left:inherit;
+    }
+
+     .custom-class-aff-terri-input-creation-ucf {
+       left:inherit;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .custom-champs-obligatoire {
+       left:inherit;
+    }
+    .custom-class-aff-terri-input-creation {
+       left:inherit;
+    }
+    .custom-class-corps-contre-input-creation {
+       left:inherit;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .custom-champs-obligatoire {
+       left:inherit;
+    }
+    .custom-class-aff-terri-input-creation {
+       left:inherit;
+    }
+    .custom-class-corps-contre-input-creation {
+       left:inherit;
+    }
+      .custom-class-corps-contre-input-creation-ucf {
+       left:inherit;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .custom-champs-obligatoire {
+       left:inherit;
+    }
+    .custom-class-aff-terri-input-creation {
+       left:inherit;
+    }
+    .custom-class-corps-contre-input-creation {
+       left:inherit;
+    }
+
+     .custom-class-corps-contre-input-creation-ucf {
+       left:inherit;
+    }
+}

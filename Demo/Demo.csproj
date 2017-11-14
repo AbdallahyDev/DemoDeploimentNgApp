@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{227FFC46-EF97-464B-BF7E-7EBBF6251E31}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo</RootNamespace>
+    <AssemblyName>Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="bs-config.e2e.json" />
+    <Content Include="bs-config.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="src\app\affetations-territoriales\boutons-actions\ButtonAffTerritorialeActionComponent.js.map" />
+    <Content Include="src\app\affetations-territoriales\creation\creation-affectation-territoriale.component.js.map" />
+    <Content Include="src\app\affetations-territoriales\list-affectation-territoriale.component.js.map" />
+    <Content Include="src\app\app.component.style.less" />
+    <Content Include="src\app\authentification\authentification.component.js.map" />
+    <Content Include="src\app\authentification\identifiant-oublie\identifiant-oublie.component.js.map" />
+    <Content Include="src\app\authentification\mdp\creation-mdp\creation-mdp.component.js.map" />
+    <Content Include="src\app\authentification\mdp\mdp-oublie\mdp-oublie.component.js.map" />
+    <Content Include="src\app\commun\components\boutons-actions\bouton-action.component.js.map" />
+    <Content Include="src\app\commun\components\footer\footer.component.js.map" />
+    <Content Include="src\app\commun\components\header\header.component.js.map" />
+    <Content Include="src\app\commun\components\not-found.js.map" />
+    <Content Include="src\app\commun\constants.js.map" />
+    <Content Include="src\app\commun\directives\equal-validator.js.map" />
+    <Content Include="src\app\commun\enums\EnumMotifInvalidite.js.map" />
+    <Content Include="src\app\commun\enums\EnumPopulationSalarie.js.map" />
+    <Content Include="src\app\commun\filtres\num-carte-format-pipe.js.map" />
+    <Content Include="src\app\commun\filtres\session-etat-pipe.js.map" />
+    <Content Include="src\app\commun\modeles\AffectationTerritoriale.js.map" />
+    <Content Include="src\app\commun\modeles\Carte.js.map" />
+    <Content Include="src\app\commun\modeles\CarteHelper.js.map" />
+    <Content Include="src\app\commun\modeles\CorpsControle.js.map" />
+    <Content Include="src\app\commun\modeles\Profile.js.map" />
+    <Content Include="src\app\commun\modeles\SessionControle.js.map" />
+    <Content Include="src\app\commun\modeles\SessionHelper.js.map" />
+    <Content Include="src\app\commun\modeles\UserAuthentification.js.map" />
+    <Content Include="src\app\commun\modeles\Utilisateur.js.map" />
+    <Content Include="src\app\commun\modeles\UtilisateurHelper.js.map" />
+    <Content Include="src\app\commun\services\affectation-territoriale\affectation-territorial-service.js.map" />
+    <Content Include="src\app\commun\services\authentification\AuthService.js.map" />
+    <Content Include="src\app\commun\services\corps-controle\corps-controle-service.js.map" />
+    <Content Include="src\app\commun\services\habilitation\habilitation-service.js.map" />
+    <Content Include="src\app\commun\services\session-controle\session-controle-service.js.map" />
+    <Content Include="src\app\commun\services\SharedService.js.map" />
+    <Content Include="src\app\habilitations\actions\button-habilation-action.js.map" />
+    <Content Include="src\app\habilitations\boutons-actions\button-habilation-action.js.map" />
+    <Content Include="src\app\habilitations\creation\creation-habilitation.component.js.map" />
+    <Content Include="src\app\habilitations\detail\detail-habilitation.component.js.map" />
+    <Content Include="src\app\habilitations\liste-habilitation.component.js.map" />
+    <Content Include="src\app\habilitations\transfert\selection-habilitation-cible.component.js.map" />
+    <Content Include="src\app\less\accueil.less" />
+    <Content Include="src\app\less\adaptation.less" />
+    <Content Include="src\app\less\apercu.less" />
+    <Content Include="src\app\less\assistant.less" />
+    <Content Include="src\app\less\autres.less" />
+    <Content Include="src\app\less\commande.less" />
+    <Content Include="src\app\less\demandes.less" />
+    <Content Include="src\app\less\dialog.less" />
+    <Content Include="src\app\less\encadres.less" />
+    <Content Include="src\app\less\entrees.less" />
+    <Content Include="src\app\less\filtres.less" />
+    <Content Include="src\app\less\formulaires.less" />
+    <Content Include="src\app\less\gestion-photos.less" />
+    <Content Include="src\app\less\global.less" />
+    <Content Include="src\app\less\interrupteur.less" />
+    <Content Include="src\app\less\mise-en-page.less" />
+    <Content Include="src\app\less\overlay.less" />
+    <Content Include="src\app\less\popin.less" />
+    <Content Include="src\app\less\tableaux.less" />
+    <Content Include="src\app\less\variables.less" />
+    <Content Include="src\app\modules\app.module.js.map" />
+    <Content Include="src\app\routes\app-routing.module.js.map" />
+    <Content Include="src\app\securite\AuthGuard.js.map" />
+    <Content Include="src\app\session-controle\boutons-actions\bouton-action.component.js.map" />
+    <Content Include="src\app\session-controle\cartes\detail-cartes\detail-cartes.component.js.map" />
+    <Content Include="src\app\session-controle\cartes\liste-cartes\liste-carte-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\cartes\recherche-cartes\recherche-cartes.component.js.map" />
+    <Content Include="src\app\session-controle\cloture\cloture-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\creation\creation-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\creation\creation-session-cntrl.style.less" />
+    <Content Include="src\app\session-controle\detail\detail-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\partage\partage-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\partage\partage-session-cntrl.style.less" />
+    <Content Include="src\app\session-controle\session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\suppression\suppression-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\transfert\transfert-session-cntrl.component.js.map" />
+    <Content Include="src\app\session-controle\transfert\transfert-session-cntrl.style.less" />
+    <Content Include="src\tsconfig.json" />
+    <Content Include="src\tslint.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\build.config.js" />
+    <Content Include="gulpfile.js" />
+    <Content Include="index.html" />
+    <Content Include="karma-test-shim.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="protractor.conf.js" />
+    <Content Include="src\app\affetations-territoriales\creation\creation-affectation-territoriale.style.css" />
+    <Content Include="src\app\affetations-territoriales\creation\creation-affectation-territoriale.template.html" />
+    <Content Include="src\app\affetations-territoriales\list-affectation-territoriale.style.css" />
+    <Content Include="src\app\affetations-territoriales\list-affectation-territoriale.template.html" />
+    <Content Include="src\app\app.component.template.html" />
+    <Content Include="src\app\assets\CIP2016_-_COM_-_Logo Web.png" />
+    <Content Include="src\app\authentification\authentification.style.css" />
+    <Content Include="src\app\authentification\authentification.template.html" />
+    <Content Include="src\app\authentification\identifiant-oublie\identifiant-oublie.style.css" />
+    <Content Include="src\app\authentification\identifiant-oublie\identifiant-oublie.template.html" />
+    <Content Include="src\app\authentification\mdp\creation-mdp\creation-mdp.style.css" />
+    <Content Include="src\app\authentification\mdp\creation-mdp\creation-mdp.template.html" />
+    <Content Include="src\app\authentification\mdp\mdp-oublie\mdp-oublie.style.css" />
+    <Content Include="src\app\authentification\mdp\mdp-oublie\mdp-oublie.template.html" />
+    <Content Include="src\app\commun\components\boutons-actions\bouton-action.template.html" />
+    <Content Include="src\app\commun\components\footer\footer.style.css" />
+    <Content Include="src\app\commun\components\footer\footer.template.html" />
+    <Content Include="src\app\commun\components\header\header.style.css" />
+    <Content Include="src\app\commun\components\header\header.template.html" />
+    <Content Include="src\app\habilitations\creation\creation-habilitation.style.css" />
+    <Content Include="src\app\habilitations\creation\creation-habilitation.template.html" />
+    <Content Include="src\app\habilitations\detail\detail-habilitation.style.css" />
+    <Content Include="src\app\habilitations\detail\detail-habilitation.template.html" />
+    <Content Include="src\app\habilitations\liste-habilitation.style.css" />
+    <Content Include="src\app\habilitations\liste-habilitation.template.html" />
+    <Content Include="src\app\habilitations\transfert\selection-habilitation-cible.style.css" />
+    <Content Include="src\app\habilitations\transfert\selection-habilitation-cible.template.html" />
+    <Content Include="src\app\less\img\Carte-apercu.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_1_blanc.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_1_bleu.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_2_blanc.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_2_bleu.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_3_blanc.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_3_bleu.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_4_blanc.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_4_bleu.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_5_blanc.png" />
+    <Content Include="src\app\less\img\CARTE_BTP_COM_Lot_2_Icone_TBB_5_bleu.png" />
+    <Content Include="src\app\less\img\CIP2016_-_COM_-_Fond clair.jpg" />
+    <Content Include="src\app\less\img\CIP2016_-_COM_-_Logo Web.png" />
+    <Content Include="src\app\less\img\CIP2016_-_Courriel_sortant_-_Bandeau_haut_V2.jpg" />
+    <Content Include="src\app\less\img\drapeaux_france.png" />
+    <Content Include="src\app\less\img\drapeaux_royaume_uni.png" />
+    <Content Include="src\app\less\img\icone-cb.png" />
+    <Content Include="src\app\less\img\icone-e-cb.png" />
+    <Content Include="src\app\less\img\icone-maestro.png" />
+    <Content Include="src\app\less\img\icone-master-card.png" />
+    <Content Include="src\app\less\img\icone-visa-electron.png" />
+    <Content Include="src\app\less\img\icone-visa.png" />
+    <Content Include="src\app\less\img\loupe.png" />
+    <Content Include="src\app\less\img\photo-placeholder.jpg" />
+    <Content Include="src\app\less\img\pixel_de_bordure.jpg" />
+    <Content Include="src\app\less\img\qr-code.png" />
+    <Content Include="src\app\session-controle\boutons-actions\bouton-action.template.html" />
+    <Content Include="src\app\session-controle\cartes\detail-cartes\detail-cartes.style.css" />
+    <Content Include="src\app\session-controle\cartes\detail-cartes\detail-cartes.template.html" />
+    <Content Include="src\app\session-controle\cartes\liste-cartes\liste-carte-session-cntrl.style.css" />
+    <Content Include="src\app\session-controle\cartes\liste-cartes\liste-carte-session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\cartes\recherche-cartes\recherche-cartes.style.css" />
+    <Content Include="src\app\session-controle\cartes\recherche-cartes\recherche-cartes.template.html" />
+    <Content Include="src\app\session-controle\cloture\cloture-session-cntrl.style.css" />
+    <Content Include="src\app\session-controle\cloture\cloture-session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\creation\creation-session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\detail\detail-session-cntrl.style.css" />
+    <Content Include="src\app\session-controle\detail\detail-session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\partage\partage-session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\session-cntrl.style.css" />
+    <Content Include="src\app\session-controle\session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\suppression\suppression-session-cntrl.style.css" />
+    <Content Include="src\app\session-controle\suppression\suppression-session-cntrl.template.html" />
+    <Content Include="src\app\session-controle\transfert\transfert-session-cntrl.template.html" />
+    <Content Include="src\favicon-btp.ico" />
+    <Content Include="src\Gruntfile.js" />
+    <Content Include="src\styles.css" />
+    <Content Include="src\systemjs-angular-loader.js" />
+    <Content Include="src\systemjs.config.extras.js" />
+    <Content Include="src\systemjs.config.js" />
+    <Content Include="src\systemjs.config.server.js" />
+    <Content Include="styles.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="e2e\" />
+    <Folder Include="scripts\" />
+    <Folder Include="src\app\session-controle\carte\liste-cartes\" />
+    <Folder Include="src\dist\app\app\affetations-territoriales\boutons-actions\" />
+    <Folder Include="src\dist\app\app\affetations-territoriales\creation\" />
+    <Folder Include="src\dist\app\app\authentification\identifiant-oublie\" />
+    <Folder Include="src\dist\app\app\authentification\mdp-oublie\" />
+    <Folder Include="src\dist\app\app\authentification\mdp\creation-mdp\" />
+    <Folder Include="src\dist\app\app\authentification\mdp\mdp-oublie\" />
+    <Folder Include="src\dist\app\app\commun\components\boutons-actions\" />
+    <Folder Include="src\dist\app\app\commun\components\footer\" />
+    <Folder Include="src\dist\app\app\commun\components\header\" />
+    <Folder Include="src\dist\app\app\commun\directives\" />
+    <Folder Include="src\dist\app\app\commun\enums\" />
+    <Folder Include="src\dist\app\app\commun\filtres\" />
+    <Folder Include="src\dist\app\app\commun\modeles\" />
+    <Folder Include="src\dist\app\app\commun\services\affectation-territoriale\" />
+    <Folder Include="src\dist\app\app\commun\services\authentification\" />
+    <Folder Include="src\dist\app\app\commun\services\corps-controle\" />
+    <Folder Include="src\dist\app\app\commun\services\habilitation\" />
+    <Folder Include="src\dist\app\app\commun\services\session-controle\" />
+    <Folder Include="src\dist\app\app\habilitations\actions\" />
+    <Folder Include="src\dist\app\app\habilitations\boutons-actions\" />
+    <Folder Include="src\dist\app\app\habilitations\creation\" />
+    <Folder Include="src\dist\app\app\habilitations\detail\" />
+    <Folder Include="src\dist\app\app\habilitations\transfert\" />
+    <Folder Include="src\dist\app\app\modules\" />
+    <Folder Include="src\dist\app\app\routes\" />
+    <Folder Include="src\dist\app\app\securite\" />
+    <Folder Include="src\dist\app\app\session-controle\boutons-actions\" />
+    <Folder Include="src\dist\app\app\session-controle\cartes\detail-cartes\" />
+    <Folder Include="src\dist\app\app\session-controle\cartes\liste-cartes\" />
+    <Folder Include="src\dist\app\app\session-controle\cartes\recherche-cartes\" />
+    <Folder Include="src\dist\app\app\session-controle\carte\liste-cartes\" />
+    <Folder Include="src\dist\app\app\session-controle\cloture\" />
+    <Folder Include="src\dist\app\app\session-controle\creation\" />
+    <Folder Include="src\dist\app\app\session-controle\detail\" />
+    <Folder Include="src\dist\app\app\session-controle\liste-cartes\" />
+    <Folder Include="src\dist\app\app\session-controle\partage\" />
+    <Folder Include="src\dist\app\app\session-controle\suppression\" />
+    <Folder Include="src\dist\app\app\session-controle\transfert\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\affetations-territoriales\boutons-actions\ButtonAffTerritorialeActionComponent.ts" />
+    <TypeScriptCompile Include="src\app\affetations-territoriales\creation\creation-affectation-territoriale.component.ts" />
+    <TypeScriptCompile Include="src\app\affetations-territoriales\list-affectation-territoriale.component.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\authentification\authentification.component.ts" />
+    <TypeScriptCompile Include="src\app\authentification\identifiant-oublie\identifiant-oublie.component.ts" />
+    <TypeScriptCompile Include="src\app\authentification\mdp\creation-mdp\creation-mdp.component.ts" />
+    <TypeScriptCompile Include="src\app\authentification\mdp\mdp-oublie\mdp-oublie.component.ts" />
+    <TypeScriptCompile Include="src\app\commun\components\boutons-actions\bouton-action.component.ts" />
+    <TypeScriptCompile Include="src\app\commun\components\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\commun\components\header\header.component.ts" />
+    <TypeScriptCompile Include="src\app\commun\components\not-found.ts" />
+    <TypeScriptCompile Include="src\app\commun\constants.ts" />
+    <TypeScriptCompile Include="src\app\commun\directives\equal-validator.ts" />
+    <TypeScriptCompile Include="src\app\commun\enums\EnumMotifInvalidite.ts" />
+    <TypeScriptCompile Include="src\app\commun\enums\EnumPopulationSalarie.ts" />
+    <TypeScriptCompile Include="src\app\commun\filtres\num-carte-format-pipe.ts" />
+    <TypeScriptCompile Include="src\app\commun\filtres\session-etat-pipe.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\AffectationTerritoriale.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\Carte.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\CarteHelper.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\CorpsControle.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\Profile.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\SessionControle.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\SessionHelper.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\UserAuthentification.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\Utilisateur.ts" />
+    <TypeScriptCompile Include="src\app\commun\modeles\UtilisateurHelper.ts" />
+    <TypeScriptCompile Include="src\app\commun\services\affectation-territoriale\affectation-territorial-service.ts" />
+    <TypeScriptCompile Include="src\app\commun\services\authentification\AuthService.ts" />
+    <TypeScriptCompile Include="src\app\commun\services\corps-controle\corps-controle-service.ts" />
+    <TypeScriptCompile Include="src\app\commun\services\habilitation\habilitation-service.ts" />
+    <TypeScriptCompile Include="src\app\commun\services\session-controle\session-controle-service.ts" />
+    <TypeScriptCompile Include="src\app\commun\services\SharedService.ts" />
+    <TypeScriptCompile Include="src\app\habilitations\actions\button-habilation-action.ts" />
+    <TypeScriptCompile Include="src\app\habilitations\boutons-actions\button-habilation-action.ts" />
+    <TypeScriptCompile Include="src\app\habilitations\creation\creation-habilitation.component.ts" />
+    <TypeScriptCompile Include="src\app\habilitations\detail\detail-habilitation.component.ts" />
+    <TypeScriptCompile Include="src\app\habilitations\liste-habilitation.component.ts" />
+    <TypeScriptCompile Include="src\app\habilitations\transfert\selection-habilitation-cible.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\app.module.ts" />
+    <TypeScriptCompile Include="src\app\routes\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\securite\AuthGuard.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\boutons-actions\bouton-action.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\cartes\detail-cartes\detail-cartes.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\cartes\liste-cartes\liste-carte-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\cartes\recherche-cartes\recherche-cartes.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\cloture\cloture-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\creation\creation-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\detail\detail-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\partage\partage-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\suppression\suppression-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\app\session-controle\transfert\transfert-session-cntrl.component.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50770</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50770/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

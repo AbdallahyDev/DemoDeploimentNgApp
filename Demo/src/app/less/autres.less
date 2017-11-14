@@ -1,0 +1,77 @@
+.icone {
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 1.2em;
+	vertical-align: top;
+
+	&.icone-rouge {
+		color: @rouge-brique;
+	}
+
+	&.icone-gauche {
+		margin-left: 0;
+		margin-right: 10px;
+		font-size: 1em;
+	}
+
+	&.icone-cliquable {
+		cursor: pointer;
+	}
+}
+
+.gras {
+	font-weight: 600;
+}
+
+.message-rouge {
+	color: @rouge-brique;
+	margin: 0 15px;
+}
+
+.separateur {
+	border-bottom:1px solid @bleu-gris;
+	margin: 30px 0px;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.icones-cb {
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+	text-align: left;
+}
+
+.icone-cb {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	background-image: url('./img/icone-cb.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
+}
+
+.icone-cb.icone-e-cb {
+	background-image: url('./img/icone-e-cb.png');
+}
+
+.icone-cb.icone-maestro {
+	background-image: url('./img/icone-maestro.png');
+}
+
+.icone-cb.icone-master-card {
+	background-image: url('./img/icone-master-card.png');
+}
+
+.icone-cb.icone-visa {
+	background-image: url('./img/icone-visa.png');
+}
+
+.icone-cb.icone-visa-electron {
+	background-image: url('./img/icone-visa-electron.png');
+}

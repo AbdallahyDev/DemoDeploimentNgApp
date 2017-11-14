@@ -1,0 +1,79 @@
+.gestion-photos {
+  background-color: @presque-blanc;
+
+  .gestion-photos-titre {
+    background-color: @bleu-principal;
+    color: @white;
+    padding: 3px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .gestion-photos-corps {
+    border: 1px solid @bleu-principal;
+    padding: 20px 10px;
+    display: flexbox;
+    display: flex;
+    flex-wrap: wrap;
+
+    st-pagination {
+      width: 100%;
+    }
+  }
+
+  controle-photo-override-admin-component,
+  controle-photo-override-component {
+    width: 23%;
+    margin: 0 1% 20px;
+
+    .gestion-photos-item-wrapper {
+      position: relative;
+      height: 100%;
+      padding: 15px 15px 50px;
+      background-color: @white;
+
+      &.carte-invalide {
+        background-color: lightgrey;
+      }
+
+      .gestion-photos-item {
+        .gestion-photo-image {
+          float: left;
+          width: 35%;
+          margin-right: 5%;
+
+          img {
+            max-width: 94px;
+            max-height: 121px;
+            height: auto;
+          }
+        }
+
+        .gestion-photo-infos {
+          float: left;
+          width: 60%;
+
+          p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: .8em;
+            max-width: 100%;
+            word-wrap: break-word;
+
+            label {
+              margin-right: 5px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .groupe-boutons {
+        position: absolute;
+        bottom: 5px;
+        width: calc(~"100% - 30px");
+        margin-top: 0;
+      }
+    }
+  }
+}

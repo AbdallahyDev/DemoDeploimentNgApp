@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+
+    //TO DO: la ligne suivante à supprimer dès que le bug de compilation TS2415 aura été corrigé 
+    //"noStrictGenericChecks": true,
+    "suppressImplicitAnyIndexErrors": true
+  }
+}
